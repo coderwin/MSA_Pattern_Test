@@ -2,6 +2,8 @@ package com.example.orderservice.u_hexagonal.adapter.out.persistence.mapper;
 
 import com.example.orderservice.u_hexagonal.adapter.out.persistence.entity.OrderProduct;
 import com.example.orderservice.u_hexagonal.adapter.out.persistence.entity.Orders;
+import com.example.orderservice.u_hexagonal.domain.OrderProductSelectAllDomain;
+import com.example.orderservice.u_hexagonal.domain.OrderSelectAllDomain;
 import com.example.orderservice.u_hexagonal.domain.vo.OrderProductSaveDomain;
 import com.example.orderservice.u_hexagonal.domain.vo.OrderSaveDomain;
 import org.modelmapper.ModelMapper;
@@ -28,5 +30,18 @@ public class OrderMapper {
 
         ModelMapper mapper = new ModelMapper();
         return mapper.map(orderSaveDomain, Orders.class);
+    }
+
+    public OrderSelectAllDomain ordersToOrderSelectAllDomain(Orders orders) {
+
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(orders, OrderSelectAllDomain.class);
+
+    }
+
+    public OrderProductSelectAllDomain orderProductToOrderProductSelectAllDomain(OrderProduct orderProduct) {
+
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(orderProduct, OrderProductSelectAllDomain.class);
     }
 }

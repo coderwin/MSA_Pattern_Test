@@ -2,6 +2,7 @@ package com.example.orderservice.u_hexagonal.application.service;
 
 import com.example.orderservice.u_hexagonal.adapter.in.web.dto.OrderSaveRequestDTO;
 import com.example.orderservice.u_hexagonal.application.port.in.OrderSaveInPort;
+import com.example.orderservice.u_hexagonal.application.port.out.KafkaEventOrderSaveOutPort;
 import com.example.orderservice.u_hexagonal.application.port.out.OrderSaveOutPort;
 import com.example.orderservice.u_hexagonal.domain.vo.OrderProductSaveDomain;
 import com.example.orderservice.u_hexagonal.domain.vo.OrderSaveDomain;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
 public class OrderSaveService implements OrderSaveInPort {
 
     private final OrderSaveOutPort orderSaveOutPort;
+    private final KafkaEventOrderSaveOutPort kafkaEventOrderSaveOutPort;
 
     @Override
     @Transactional
@@ -52,5 +54,10 @@ public class OrderSaveService implements OrderSaveInPort {
         // Order InPort save 실행한다.
 //        dao.save(orderEntity);
         orderSaveOutPort.save(orderSaveDomain);
+
+        // Kafka OrderSave out port 실행한다.
+        kafkaEventOrderSaveOutPort.orderEvent(detaillist);
+
+
     }
 }

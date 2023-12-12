@@ -30,8 +30,8 @@ public class Orders {
     //고객이 여러 건의 주문을 할 수 있으므로 - 다대일관계
     private Long customerId;
     //주문일반1에 대해서 구매한 정보(orderDetail)
-    @OneToMany(mappedBy =  "myorder",cascade = CascadeType.ALL)
-    //@OneToMany(mappedBy = "myorder")
+    @OneToMany(mappedBy =  "orders",cascade = CascadeType.ALL)
+    //@OneToMany(mappedBy = "orders")
     private List<OrderProduct> orderProductList = new ArrayList<>();
 
     public Orders(String addr, Long customerId) {

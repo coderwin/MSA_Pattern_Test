@@ -1,5 +1,6 @@
 package com.example.orderservice.u_hexagonal.adapter.out.persistence.mapper;
 
+import com.example.orderservice.u_hexagonal.adapter.out.kafka.dto.KafkaOrderProductSaveRequestDTO;
 import com.example.orderservice.u_hexagonal.adapter.out.persistence.entity.OrderProduct;
 import com.example.orderservice.u_hexagonal.adapter.out.persistence.entity.Orders;
 import com.example.orderservice.u_hexagonal.domain.OrderProductSelectAllDomain;
@@ -43,5 +44,12 @@ public class OrderMapper {
 
         ModelMapper mapper = new ModelMapper();
         return mapper.map(orderProduct, OrderProductSelectAllDomain.class);
+    }
+
+    public KafkaOrderProductSaveRequestDTO orderProductSaveDomainToKafkaOrderProductSaveRequestDTO(OrderProductSaveDomain orderProductSaveDomain) {
+
+        ModelMapper mapper = new ModelMapper();
+        return mapper.map(orderProductSaveDomain, KafkaOrderProductSaveRequestDTO.class);
+
     }
 }

@@ -9,14 +9,14 @@ spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@127.0.0.1:1521:xe
-    username: msa
-    password: msa
+    username: hexagonalwithkafka
+    password: hexagonalwithkafka
 
   jpa:
     show-sql: true
     hibernate:
-      #ddl-auto: create
-      ddl-auto: none
+      ddl-auto: create
+#      ddl-auto: none
 
     properties:
       hibernate:
@@ -31,3 +31,10 @@ logging:
         type:
           descriptor:
             sql: trace
+
+####### kafka 설정 #######
+kafka:
+  server:
+    ip: 192.168.0.12:9092
+  topic:
+    order_service: order-topic

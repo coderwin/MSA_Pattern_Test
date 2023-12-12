@@ -25,8 +25,6 @@ public class KafkaSaveConfig {
 
     @Value("${kafka.server.ip}")
     private String ip;
-    @Value("${kafka.topic.order_service}")
-    private String orderService;
 
 
     /**

@@ -13,5 +13,5 @@ import java.util.List;
 public class OrderSaveRequestDTO {
     private String addr; //배송주소
     private Long customerId;
-    private List<OrderProductSaveRequestDTO> OrderProductSaveRequestDtoList;
+    private List<OrderProductSaveRequestDTO> orderProductSaveRequestDtoList;
 }

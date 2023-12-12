@@ -22,7 +22,7 @@ import static java.util.stream.Collectors.toList;
 @Slf4j
 public class KafkaEventOrderSaveOutAdapter implements KafkaEventOrderSaveOutPort {
 
-    @Value("${kafka.topic.order}")
+    @Value("${kafka.topic.order_service}")
     private String orderTopic;
 
     private final OrderMapper orderMapper;

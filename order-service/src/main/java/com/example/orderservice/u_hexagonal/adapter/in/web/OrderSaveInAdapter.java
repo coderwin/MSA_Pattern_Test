@@ -9,11 +9,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RequestMapping("/orders")
 @RequiredArgsConstructor
+@RestController
 @Slf4j
 @InAdatpter
 public class OrderSaveInAdapter {
@@ -34,13 +36,13 @@ public class OrderSaveInAdapter {
         //주문된 상품 정보를 리턴받아서 이 정보로 메시지를 보낸다.
         //리턴받은 주문내역
 
-        /// kafka로 product로 전달한다.
-        List<OrderProductSaveRequestDTO> orderProductlist = request.getOrderDetailDTOList();
-
-        for(OrderProductSaveRequestDTO orderProduct:orderProductlist){
-            log.info("주문성공한 상품:{}",orderProduct);
-            producer.sendMessage("ordercreate",orderProduct);
-        }
+//        /// kafka로 product로 전달한다.
+//        List<OrderProductSaveRequestDTO> orderProductlist = request.getOrderDetailDTOList();
+//
+//        for(OrderProductSaveRequestDTO orderProduct:orderProductlist){
+//            log.info("주문성공한 상품:{}",orderProduct);
+//            producer.sendMessage("ordercreate",orderProduct);
+//        }
     }
 
 

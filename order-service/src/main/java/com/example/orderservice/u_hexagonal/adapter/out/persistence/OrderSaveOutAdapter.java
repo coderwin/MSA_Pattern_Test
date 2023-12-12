@@ -8,11 +8,13 @@ import com.example.orderservice.u_hexagonal.application.port.out.OrderSaveOutPor
 import com.example.orderservice.u_hexagonal.common.OutAdapter;
 import com.example.orderservice.u_hexagonal.domain.vo.OrderSaveDomain;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+@Component
 @RequiredArgsConstructor
 @OutAdapter
 public class OrderSaveOutAdapter implements OrderSaveOutPort {

@@ -1,0 +1,45 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: redis-jwt
+  data:
+    redis:
+      host: 192.168.0.10
+      port: 6379
+      password: test1234
+  sql:
+    init:
+      encoding: UTF-8
+      mode: always
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@127.0.0.1:1521:xe
+    username: msa
+    password: msa
+
+  jpa:
+    show-sql: true
+    hibernate:
+      #ddl-auto: create
+      ddl-auto: none
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: debug
+        type:
+          descriptor:
+            sql: trace
+
+jwt:
+  header: Authorization
+  secret: Q4NSl604sgyHJj1qwEkR3ycUeR4uUAt7WJraD7EN3O9DVM4yyYuHxMEbSF4XXyYJkal13eqgB0F7Bq4H
+  token-validity-in-second: 86400

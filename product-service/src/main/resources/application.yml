@@ -8,8 +8,8 @@ spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
     url: jdbc:oracle:thin:@127.0.0.1:1521:xe
-    username: msa
-    password: msa
+    username: msa5
+    password: msa5
 
   jpa:
     show-sql: true
@@ -30,3 +30,11 @@ logging:
         type:
           descriptor:
             sql: trace
+
+####### 내가 만든 kafka 속성 시작 #########
+
+kafka:
+  server:
+    ip: 127.0.0.1:9092
+
+####### 내가 만든 kafka 속성 끝 #########

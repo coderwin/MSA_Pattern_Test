@@ -1,4 +1,4 @@
-package com.example.productservice.entity;
+package com.example.productservice.u_hexagonal.adapter.out.persistence.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-//@Entity
+@Entity
 @Table(name="category")
 public class Category {
     @Id

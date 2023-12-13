@@ -15,8 +15,8 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
-#      ddl-auto: none
+#      ddl-auto: create
+      ddl-auto: none
 
     properties:
       hibernate:
@@ -35,6 +35,7 @@ logging:
 ####### kafka 설정 #######
 kafka:
   server:
-    ip: 192.168.0.12:9092
+#    ip: 192.168.0.12:9092
+    ip: 127.0.0.1:9092
   topic:
     order_service: order-topic
